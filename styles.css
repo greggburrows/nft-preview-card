@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{
+--primary-blue: hsl(215, 51%, 70%);
+--primary-cyan: hsl(178, 100%, 50%);
+--neutral-main: hsl(217, 54%, 11%);
+--neutral-card: hsl(216, 50%, 16%);
+--neutral-line: hsl(215, 32%, 27%);
+--neutral-white: hsl(0, 0%, 100%);
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    font-size: 18px;
+    background-color: var(--neutral-main);
+    color: var(--neutral-white);
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.outer__container {
+    width: 50%;
+    background-color: var(--neutral-card);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 1fr auto;
+
+
+}
+
+.text__holder {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.number {
+    display: flex;
+
+align-items: center;
+gap: 5px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .number::before {
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-image: url(/images/icon-ethereum.svg);
+    background-repeat: no-repeat;
+} */
+.img__holder {
+    min-height: 0;
+
+}
+
+
+
+.img__holder img {
+     border-radius: 10px;
+     width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+

@@ -83,6 +83,8 @@ body {
 
 .img__holder {
     min-height: 0;
+    position: relative;
+    cursor: pointer;
 
 }
 
@@ -98,7 +100,37 @@ body {
     height: 100%;
     display: block;
     object-fit: cover;
+    cursor: pointer;
 }
+
+.img__holder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: url(images/icon-view.svg) no-repeat center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+    
+}
+
+.img__holder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--primary-cyan);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.img__holder:hover::before, 
+.img__holder:hover::after {
+    opacity: 0.6;
+}
+
 
 .text__holder p {
     color: var(--primary-blue)
@@ -124,7 +156,12 @@ body {
 }
 
 .author b {
-    color: var(--neutral-white)
+    color: var(--neutral-white);
+    cursor: pointer;
+}
+
+.author b:hover {
+    color: var(--primary-cyan)
 }
 
 @media (max-width: 600px) {
@@ -146,5 +183,7 @@ body {
         justify-content: center;
     }
 }
+
+
 
 

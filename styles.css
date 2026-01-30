@@ -9,8 +9,8 @@
 --neutral-white: hsl(0, 0%, 100%);
 }
 
-*, 
-::before, 
+*,
+::before,
 ::after {
     box-sizing: border-box;
     margin: 0;
@@ -30,12 +30,14 @@ body {
 
 .outer__container {
     width: 50%;
+    max-width: 350px;
     background-color: var(--neutral-card);
     padding: 20px;
     border-radius: 10px;
     display: grid;
     gap: 20px;
     grid-template-rows: 1fr auto;
+    box-shadow: 7px 5px 8px  rgba(31, 31, 31, 0.334);
 
 
 }
@@ -46,30 +48,46 @@ body {
     gap: 20px
 }
 
-.number {
-    display: flex;
+.number, .days {
+    
+    gap: 5px;
+    font-size: 1rem;
+    white-space: nowrap;
 
-align-items: center;
-gap: 5px;
+    
+
 }
+.number img,
+    .days img {
+        height: 15px;
+        vertical-align: -1.2px;
+        margin-right: 5px;
+    }
 
 .info {
-    display: flex;
-    justify-content: space-between;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
     align-items: center;
+
 }
 
-/* .number::before {
-    content: "";
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    background-image: url(/images/icon-ethereum.svg);
-    background-repeat: no-repeat;
-} */
+.days {
+    justify-self: end;
+}
+
+
+
+
+
 .img__holder {
     min-height: 0;
 
+}
+
+.number {
+    color: var(--primary-cyan)
 }
 
 
@@ -81,4 +99,52 @@ gap: 5px;
     display: block;
     object-fit: cover;
 }
+
+.text__holder p {
+    color: var(--primary-blue)
+}
+
+.author {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 10px;
+    border-top: 2px solid var(--neutral-line);
+    padding-top: 10px;
+
+}
+
+.author img {
+    width: 15%;
+    height: auto;
+    object-fit: cover;
+}
+
+.author b {
+    color: var(--neutral-white)
+}
+
+@media (max-width: 600px) {
+    .outer__container {
+        text-align: center;
+    }
+    .info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        
+
+        justify-content: center;
+    }
+
+    .days {
+        justify-self: center;
+    }
+    .author {
+        justify-content: center;
+    }
+}
+
 
